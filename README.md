@@ -93,10 +93,7 @@ python3 -m pip install --upgrade pip
    ```
 
 2. 下载项目文件
-   ```bash
-   git clone [项目地址]
-   # 或直接下载 Maxima_music_dict.py 文件
-   ```
+   # 直接下载 music_dict on computer.py 文件
 
 3. 安装必要的 Python 库
    ```bash
@@ -105,13 +102,13 @@ python3 -m pip install --upgrade pip
 
 4. 运行程序
    ```bash
-   python Maxima_music_dict.py
+   python music_dict on computer.py
    ```
 
    Mac/Linux 用户也可以：
    ```bash
-   chmod +x Maxima_music_dict.py  # 添加执行权限
-   ./Maxima_music_dict.py  # 直接运行
+   chmod +x music_dict on computer.py  # 添加执行权限
+   ./music_dict on computer.py  # 直接运行
    ```
 
 ## 使用说明
@@ -197,7 +194,7 @@ A: 检查 `.music_dict_data` 目录下的备份文件
 
 ## 手机用户使用说明
 
-对于手机用户，我们提供了一个简化版本的音乐术语词典（music_dict_old.py），可以使用 Pythonista 等 Python IDE App 运行。
+对于手机用户，我们提供了一个简化版本的音乐术语词典（music_dict on mobile.py），可以使用 Pythonista 等 Python IDE App 运行。
 
 ### 安装步骤（iOS - Pythonista）
 1. 在 App Store 下载安装 Pythonista
@@ -219,7 +216,7 @@ A: 检查 `.music_dict_data` 目录下的备份文件
 
 ### 安装步骤（Android - Pydroid）
 1. 在 Google Play 下载安装 Pydroid
-2. 将 music_dict_old.py 导入 Pydroid
+2. 将 music_dict on mobile.py 导入 Pydroid
 3. 安装必要的库：
    pip install pypinyin
 
@@ -241,248 +238,3 @@ A: 检查 `.music_dict_data` 目录下的备份文件
 1. 手机版为轻量级版本，适合日常快速查询
 2. 如需完整功能，建议使用电脑版
 3. 部分手机 Python IDE 可能需要付费
-
----
-
-# Music Terms Dictionary
-
-This is an interactive music terminology lookup tool that supports Chinese, Pinyin, and English searches, with features like favorites, export functions, and more.
-
-## Features
-
-- Multiple search methods (Chinese, Pinyin, English)
-- Fuzzy matching and smart suggestions
-- Favorites collection
-- Search history
-- Multiple export formats (TXT, Word, Excel, HTML)
-- Automatic data backup
-- Statistics display
-
-## Python Installation Guide
-
-### Windows Users
-1. Visit Python website: https://www.python.org/downloads/
-2. Click "Download Python x.x.x"
-3. Run the installer:
-   - ✅ Check "Add Python to PATH"
-   - Click "Install Now"
-4. Verify installation:
-   - Open Command Prompt (Win+R, type cmd)
-   - Type: `python --version`
-   - If version number shows, installation is successful
-
-### Mac Users
-1. Install using Homebrew (recommended):
-   ```bash
-   # Install Homebrew (if not installed)
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   
-   # Install Python
-   brew install python
-   ```
-
-2. Or download directly:
-   - Visit https://www.python.org/downloads/
-   - Download Mac version
-   - Run the installer
-
-3. Verify installation:
-   - Open Terminal
-   - Type: `python3 --version`
-
-### Linux Users
-Most Linux distributions come with Python pre-installed. If not:
-
-1. Ubuntu/Debian:
-   ```bash
-   sudo apt update
-   sudo apt install python3 python3-pip
-   ```
-
-2. Fedora:
-   ```bash
-   sudo dnf install python3 python3-pip
-   ```
-
-3. Verify installation:
-   ```bash
-   python3 --version
-   ```
-
-### pip Package Manager
-If pip is not installed:
-
-1. Windows:
-   ```bash
-   python -m ensurepip --default-pip
-   ```
-
-2. Mac/Linux:
-   ```bash
-   python3 -m ensurepip --default-pip
-   ```
-
-Upgrade pip:
-```bash
-# Windows
-python -m pip install --upgrade pip
-
-# Mac/Linux
-python3 -m pip install --upgrade pip
-```
-
-## Installation Steps
-
-1. Ensure Python 3.6 or higher is installed
-   ```bash
-   python --version
-   ```
-
-2. Download project files
-   ```bash
-   git clone [project URL]
-   # Or directly download Maxima_music_dict.py
-   ```
-
-3. Install required Python libraries
-   ```bash
-   pip install pypinyin python-docx pandas openpyxl
-   ```
-
-4. Run the program
-   ```bash
-   python Maxima_music_dict.py
-   ```
-
-   Mac/Linux users can also:
-   ```bash
-   chmod +x Maxima_music_dict.py  # Add execution permission
-   ./Maxima_music_dict.py  # Run directly
-   ```
-
-## Usage Guide
-
-### Basic Search
-- Chinese input: e.g., "甜美"
-- Pinyin input: e.g., "tianmei"
-- English input: e.g., "dolce"
-- Partial matching: e.g., "dol"
-
-### Common Commands
-- `?` : Show help
-- `dc1` : Exit program
-- `cl1` : Clear favorites
-- `exp` : Export favorites
-- `fav` : View favorites
-- `his` : View search history
-- `stat` : Show statistics
-
-### Favorites Function
-1. For single search result:
-   - Choose to favorite (y/n)
-
-2. For multiple search results:
-   - Enter number (1-N) to select term
-   - Enter 0 to cancel
-
-### Export Function
-1. Enter `exp` to access export mode
-2. Choose export format:
-   - 1: Text file (.txt)
-   - 2: Word document (.docx)
-   - 3: Excel spreadsheet (.xlsx)
-   - 4: HTML webpage (.html)
-3. Choose export location:
-   - 1: Desktop
-   - 2: Downloads
-   - 3: Documents
-   - 4: Current directory
-
-### Data Backup
-- Program automatically backs up user data and program files
-- Backups stored in `.music_dict_data/backups` directory
-- If program file is lost, recover by:
-  1. Show hidden directories (Command + Shift + . on Mac)
-  2. Navigate to .music_dict_data/backups
-  3. Find latest program_backup_*.zip
-  4. Extract to recover program backup
-
-## Search Tips
-
-1. Use Pinyin initials:
-   - e.g., "tm" instead of "tianmei"
-
-2. Prefer complete keywords:
-   - Complete terms yield more accurate results
-
-3. When too many results:
-   - Try longer keywords
-   - Combine Chinese and Pinyin search
-
-4. When no results found:
-   - Try synonyms
-   - Check spelling
-   - Try different search methods
-
-## Notes
-
-1. First run creates `.music_dict_data` folder for user data
-2. Export functions require corresponding Python libraries
-3. Regular export of favorites recommended for backup
-
-## Common Issues
-
-Q: Program won't start?
-A: Check Python version and required libraries
-
-Q: Can't find exported files?
-A: Check selected export location
-
-Q: Lost favorited terms?
-A: Check backup files in `.music_dict_data` directory
-
-## Mobile Users Guide
-
-For mobile users, we provide a simplified version (music_dict_old.py) that can be run using apps like Pythonista.
-
-### Installation (iOS - Pythonista)
-1. Download Pythonista from App Store
-2. Install StaSh (for pip):
-   - Create new Python file
-   - Copy and paste:
-     ```python
-     import requests as r; exec(r.get('https://bit.ly/get-stash').content)
-     ```
-   - Run file
-   - Restart Pythonista
-   - Run `launch_stash.py`
-   - Install required library:
-     pip install pypinyin
-
-> Tip: Watch the [video tutorial](https://www.youtube.com/watch?v=RYS0bZ5Iivk) for detailed instructions
-
-3. Import music_dict_old.py to Pythonista
-
-### Installation (Android - Pydroid)
-1. Download Pydroid from Google Play
-2. Import music_dict_old.py
-3. Install required library:
-   pip install pypinyin
-
-### Simplified Features
-- Basic Chinese, Pinyin, English search
-- Synonym matching
-- Fuzzy matching
-- Offline usage
-
-### Limitations
-Simplified version excludes:
-- Favorites
-- Export functions
-- Search history
-- Data backup
-
-### Notes
-1. Mobile version is lightweight for quick lookups
-2. Use desktop version for full features
-3. Some mobile Python IDEs may require payment
