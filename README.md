@@ -18,7 +18,7 @@
 1. 访问 Python 官网：https://www.python.org/downloads/
 2. 点击"Download Python x.x.x"下载最新版本
 3. 运行安装程序
-   - ✅ 勾选"Add Python to PATH"
+   - ✅ 勾选"Add Python to PATH"（重要！）
    - 点击"Install Now"开始安装
 4. 验证安装：
    - 打开命令提示符（按 Win+R，输入 cmd）
@@ -93,22 +93,61 @@ python3 -m pip install --upgrade pip
    ```
 
 2. 下载项目文件
-   # 直接下载 music_dict on computer.py 文件
+   ```bash
+   git clone [项目地址]
+   # 或直接下载 music_dict on computer.py 文件
+   ```
 
 3. 安装必要的 Python 库
+
+   方式一（推荐）：
    ```bash
-   pip install pypinyin python-docx pandas openpyxl
+   # Windows
+   pip install pypinyin --trusted-host pypi.org --trusted-host files.pythonhosted.org
+   pip install python-docx --trusted-host pypi.org --trusted-host files.pythonhosted.org
+   pip install pandas --trusted-host pypi.org --trusted-host files.pythonhosted.org
+   pip install openpyxl --trusted-host pypi.org --trusted-host files.pythonhosted.org
+   pip install requests --trusted-host pypi.org --trusted-host files.pythonhosted.org
+
+   # Mac/Linux
+   pip3 install pypinyin --trusted-host pypi.org --trusted-host files.pythonhosted.org
+   pip3 install python-docx --trusted-host pypi.org --trusted-host files.pythonhosted.org
+   pip3 install pandas --trusted-host pypi.org --trusted-host files.pythonhosted.org
+   pip3 install openpyxl --trusted-host pypi.org --trusted-host files.pythonhosted.org
+   pip3 install requests --trusted-host pypi.org --trusted-host files.pythonhosted.org
+   ```
+
+   或一次性安装所有库：
+   ```bash
+   # Windows
+   pip install pypinyin python-docx pandas openpyxl requests --trusted-host pypi.org --trusted-host files.pythonhosted.org
+
+   # Mac/Linux
+   pip3 install pypinyin python-docx pandas openpyxl requests --trusted-host pypi.org --trusted-host files.pythonhosted.org
+   ```
+
+   方式二（如果方式一不成功）：
+   ```bash
+   # Windows
+   pip install pypinyin python-docx pandas openpyxl requests difflib json os sys time shutil zipfile
+
+   # Mac/Linux
+   python3 -m pip install pypinyin python-docx pandas openpyxl requests difflib json os sys time shutil zipfile
    ```
 
 4. 运行程序
    ```bash
-   python music_dict on computer.py
+   # Windows
+   python "music_dict on computer.py"
+
+   # Mac/Linux
+   python3 "music_dict on computer.py"
    ```
 
    Mac/Linux 用户也可以：
    ```bash
-   chmod +x music_dict on computer.py  # 添加执行权限
-   ./music_dict on computer.py  # 直接运行
+   chmod +x "music_dict on computer.py"  # 添加执行权限
+   ./"music_dict on computer.py"  # 直接运行
    ```
 
 ## 使用说明
@@ -180,6 +219,8 @@ python3 -m pip install --upgrade pip
 1. 首次运行时会在程序所在目录创建 `.music_dict_data` 文件夹，用于存储用户数据
 2. 导出功能需要相应的 Python 库支持
 3. 建议定期导出收藏夹，以备份重要数据
+4. Windows 用户请确保已勾选"Add Python to PATH"选项
+5. 如遇到权限问题，请以管理员身份运行命令提示符
 
 ## 常见问题
 
@@ -191,6 +232,9 @@ A: 检查选择的导出位置，默认会提示导出路径
 
 Q: 收藏的术语丢失？
 A: 检查 `.music_dict_data` 目录下的备份文件
+
+Q: pip 安装库时报错？
+A: 尝试以管理员身份运行命令提示符，或使用 `python -m pip install` 命令
 
 ## 手机用户使用说明
 
@@ -208,18 +252,21 @@ A: 检查 `.music_dict_data` 目录下的备份文件
    - 等待安装完成，然后重启 Pythonista
    - 运行新生成的 `launch_stash.py` 文件进入终端
    - 在终端中使用 pip 安装所需库：
-     pip install pypinyin
+     ```bash
+     pip install pypinyin requests difflib json os sys time
+     ```
 
 > 提示：如果需要查看详细的安装教程，可以观看[视频教程](https://www.youtube.com/watch?v=RYS0bZ5Iivk)
 
-3. 将 music_dict_old.py 导入 Pythonista
+3. 将 music_dict on mobile.py 导入 Pythonista
 
 ### 安装步骤（Android - Pydroid）
 1. 在 Google Play 下载安装 Pydroid
 2. 将 music_dict on mobile.py 导入 Pydroid
 3. 安装必要的库：
-   pip install pypinyin
-
+   ```bash
+   pip install pypinyin requests difflib json os sys time
+   ```
 
 ### 简化版功能
 - 基本的中文、拼音、英文搜索
@@ -238,3 +285,5 @@ A: 检查 `.music_dict_data` 目录下的备份文件
 1. 手机版为轻量级版本，适合日常快速查询
 2. 如需完整功能，建议使用电脑版
 3. 部分手机 Python IDE 可能需要付费
+4. iOS 用户需要配置 StaSh 才能使用 pip
+5. 建议在 WiFi 环境下安装库文件
